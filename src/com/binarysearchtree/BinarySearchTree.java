@@ -20,5 +20,7 @@ public class BinarySearchTree {
 		binaryTree.printTree();
 		
 		System.out.println("\nThe size of tree : "+binaryTree.getSize());
+		
+		binaryTree.search(63);
 	}
 }
