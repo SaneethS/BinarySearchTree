@@ -39,4 +39,19 @@ public class BinaryTree<K extends Comparable<K>> {
 	private int getSizeRecursive(BinaryNode<K> curr) {
 		return curr == null?0:1+getSizeRecursive(curr.left)+getSizeRecursive(curr.right);
 	}
+	
+	public void search(K key) {
+		this.searchNode(key, root);
+	}
+
+	private void searchNode(K key, BinaryNode<K> curr) {
+		if(curr == null) {
+			System.out.println("Node not found!!");
+			return;
+		}
+		int result = key.compareTo(curr.key);
+		if(result == 0) System.out.println(key+" is found");
+		else if(result<0) searchNode(key,curr.left);
+		else searchNode(key, curr.right);
+	}
 }
