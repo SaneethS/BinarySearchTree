@@ -31,4 +31,12 @@ public class BinaryTree<K extends Comparable<K>> {
 		System.out.print(curr.key+" ");
 		printNode(curr.right);
 	}
+	
+	public int getSize() {
+		return this.getSizeRecursive(root);
+	}
+
+	private int getSizeRecursive(BinaryNode<K> curr) {
+		return curr == null?0:1+getSizeRecursive(curr.left)+getSizeRecursive(curr.right);
+	}
 }
